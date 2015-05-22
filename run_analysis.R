@@ -89,4 +89,4 @@ totaldf <- rbind(totaldf,tmp)
 tidydata <- ddply(totaldf,c("Activity","Subject"), numcolwise(mean) )
 
 
-write.table(tidydata,file="tidydata.csv",sep=" ",row.name=FALSE )
+write.table(tidydata,file="tidydata.txt",sep=" ",row.name=FALSE )

@@ -55,4 +55,4 @@ source("run_analysis.R")
 
 5. Perform a smart reduction based on Activity and Subject 
 
-6.
+6. Write out the data

@@ -45,4 +45,14 @@ source("run_analysis.R")
 ### Brief description
 
 
-Quickly sorts the 
+1. Determines if the data has been downloaded, and if not it downloads and unzips it
+
+2. Determine the labels for the data elements we will be reading  from the files features.txt  , features_info.txt and activity_labels.txt
+
+3. for test and train, performs a load of the data 
+
+4. Merge the tables
+
+5. Perform a smart reduction based on Activity and Subject 
+
+6.

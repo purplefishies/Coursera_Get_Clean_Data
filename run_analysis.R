@@ -1,7 +1,25 @@
 
 library(plyr)
+library(RCurl)
+
+url = "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+
+dirroot <- "./UCI HAR Dataset/"
+
+curl_file <- function(url,localfile="tmp.zip" ) {
+    if ( url.exists(url) ) {
+        f = CFILE( localfile , mode="wb")
+        curlPerform(URL=url, writedata = f@ref)
+        close(f)
+    }
+    localfile 
+}
 
 
+if ( !file.exists(dirroot) ){
+    zipfile <- curl_file( url, "datafile.zip" )
+    unzip( zipfile  )
+}
 
 
 #=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
@@ -38,7 +56,7 @@ load_subdirectory <- function ( dirroot="./UCI HAR Dataset/",name="test", featur
     retdataframe
 }
 
-dirroot <- "./UCI HAR Dataset/"
+
 
 features <- read.csv(paste( dirroot,"features.txt",sep=""),header=FALSE,sep=" ")
 

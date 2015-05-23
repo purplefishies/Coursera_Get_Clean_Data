@@ -102,7 +102,21 @@ http://www.techbitar.com/sensoduino.html
 Run_analysis.R script performs the data concatenation, transformation and computational summary by the following steps.
 
 
+Note that the steps are covered in the source code.
 
-See the README.md  or read the sample code
+1. Read the features File to get the list of names for the variables we want to use
+
+2. Only find the feature names that have "std" OR "mean" in them using a grep
+
+3. Save the index for the original features that have "mean" or "std" in the name
+
+4. Read the activitiy labels
+
+5. Use the subroutine load_subdirectory() which does the following
+
+   * read the file X_(test|train).txt
+   * rename the columns of the data set values with the descriptive names
+   * 
+
 
 

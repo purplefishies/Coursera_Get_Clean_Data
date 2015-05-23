@@ -43,21 +43,28 @@ load_subdirectory <- function ( dirroot="./UCI HAR Dataset/",name="test", featur
     names(retdataframe) <- sapply(X=features[indices,2],FUN=as.string )
 
     subject <- read.csv( paste(dirroot,name,"/subject_",name,".txt",sep=""),sep="",header=FALSE )
+
+    # Add this new column of Subject to the far edge of this
+    # dataframe
     retdataframe <- cbind(retdataframe, Subject=subject[,1] )
     activities <- read.csv( paste(dirroot,name,"/y_",name,".txt",sep=""), sep="",header=FALSE )
 
     # Name the activities from the actlabels
     # SEE REQUIREMENT 3
     activities <- actlabels[ activities$V1,"V2"]
+
+    # Add the new column of Activity to the far edge of this data frame
     retdataframe <- cbind( retdataframe, Activity=activities )
 
+    # Add the column of Run ( which is either "test" or "train" ) to the edge of the
+    # dataframe
     retdataframe <- cbind( retdataframe, Run=rep(c(name),times=dim(retdataframe)[1] ) )
     
     retdataframe
 }
 
 
-
+# Read the features File to get the list of names for the variables we want to use
 features <- read.csv(paste( dirroot,"features.txt",sep=""),header=FALSE,sep=" ")
 
 
@@ -71,7 +78,7 @@ std_and_mean_indices <- grep("(mean|std)",features[,2],perl=TRUE)
 # Save these names for later to perform an average based on each one
 keepnames <- sapply(X=features[std_and_mean_indices,2],FUN=as.string )
 
-
+# Read the activitiy labels
 actlabels <- read.csv(paste( dirroot,"activity_labels.txt",sep=""),header=FALSE,sep=" ")
 
 totaldf <- load_subdirectory(name="test", features=features, indices=std_and_mean_indices, actlabels=actlabels )

@@ -129,13 +129,14 @@ Is represented by a "level" and has one of the values of
 * fBodyGyroMag - freq Domain Body Gyro Magnitude: X-,Y-,Z- [rad/T^2^]
 * fBodyGyroJerkMag - freq Domain Gyro Jerk Magnitude: X-,Y-,Z- [rad/T^2^]
 
-
-
 These variables include either "mean" or "std" in them. 
+
+
+### Run
+
+This was for debugging purposes. It was a level representing either "test" or "train"
 
 
 Data Units are defined from this web site.
 http://www.techbitar.com/sensoduino.html
-### Method
-Run_analysis.R script performs the data concatenation, transformation and computational summary by the following steps.
 

@@ -114,9 +114,21 @@ Note that the steps are covered in the source code.
 
 5. Use the subroutine load_subdirectory() which does the following
 
-   * read the file X_(test|train).txt
-   * rename the columns of the data set values with the descriptive names
-   * 
+   * Read the file X_(test|train).txt
+   * Rename the columns of the data set values with the descriptive names
+   * Read the file subject_(test|train).txt
+   * Add the subject data as a column to the temporary dataframe
+   * Read the file y_(test|train).txt
+   * Add the activity data as a column to the temporary dataframe
+   * Add a final column of (test|train) just to keep the data sources straight ( useful for debugging )
+    
+6. Save the dataframe from load_subdirectory(), then rerun it with the other type
+
+7. Combine the two dataframes using rbind()
+
+8. Use the function ddply to reduce the combine dataframe.
+
+9. Write out the table in space separated formatted.
 
 
 

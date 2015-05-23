@@ -92,7 +92,6 @@ totaldf <- rbind(totaldf,tmp)
 # Now lets construct a tidy version of this total dataset broken down
 # by Activity and Subject. This drops the column for "test" / "train"
 # SEE REQUIREMENT 5
-#
 tidydata <- ddply(totaldf,c("Activity","Subject"), numcolwise(mean) )
 
 

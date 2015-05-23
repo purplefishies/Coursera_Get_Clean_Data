@@ -45,14 +45,33 @@ source("run_analysis.R")
 ### Brief description
 
 
-1. Determines if the data has been downloaded, and if not it downloads and unzips it
+Note that the steps are covered in the source code, but the following is the 
+overview
 
-2. Determine the labels for the data elements we will be reading  from the files features.txt  , features_info.txt and activity_labels.txt
+1. Read the features File to get the list of names for the variables we want to use
 
-3. for test and train, performs a load of the data 
+2. Only find the feature names that have "std" OR "mean" in them using a grep
 
-4. Merge the tables
+3. Save the index for the original features that have "mean" or "std" in the name
 
-5. Perform a smart reduction based on Activity and Subject 
+4. Read the activitiy labels
 
-6. Write out the data
+5. Use the subroutine load_subdirectory() which does the following
+
+   * Read the file X_(test|train).txt
+   * Rename the columns of the data set values with the descriptive names
+   * Read the file subject_(test|train).txt
+   * Add the subject data as a column to the temporary dataframe
+   * Read the file y_(test|train).txt
+   * Add the activity data as a column to the temporary dataframe
+   * Add a final column of (test|train) just to keep the data sources straight ( useful for debugging )
+    
+6. Save the dataframe from load_subdirectory(), then rerun it with the other type
+
+7. Combine the two dataframes using rbind()
+
+8. Use the function ddply to reduce the combine dataframe.
+
+9. Write out the table in space separated formatted.
+
+

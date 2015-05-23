@@ -95,40 +95,25 @@ The experiments involved 30 volunteers wearing a smartphone around their waist a
 * fBodyBodyGyroJerkMag-meanFreq()
 
 
-Data Units are defined from this web site.
+## Breakdown of the variables
 
+### Subject
+Is a number in the range [1:30]
+
+### Activity
+Is represented by a "level" and has one of the values of 
+* WALKING
+* WALKING_UPSTAIRS
+* WALKING_DOWNSTAIRS
+* SITTING
+* STANDING
+* LAYING
+
+
+
+
+Data Units are defined from this web site.
 http://www.techbitar.com/sensoduino.html
 ### Method
 Run_analysis.R script performs the data concatenation, transformation and computational summary by the following steps.
-
-
-Note that the steps are covered in the source code.
-
-1. Read the features File to get the list of names for the variables we want to use
-
-2. Only find the feature names that have "std" OR "mean" in them using a grep
-
-3. Save the index for the original features that have "mean" or "std" in the name
-
-4. Read the activitiy labels
-
-5. Use the subroutine load_subdirectory() which does the following
-
-   * Read the file X_(test|train).txt
-   * Rename the columns of the data set values with the descriptive names
-   * Read the file subject_(test|train).txt
-   * Add the subject data as a column to the temporary dataframe
-   * Read the file y_(test|train).txt
-   * Add the activity data as a column to the temporary dataframe
-   * Add a final column of (test|train) just to keep the data sources straight ( useful for debugging )
-    
-6. Save the dataframe from load_subdirectory(), then rerun it with the other type
-
-7. Combine the two dataframes using rbind()
-
-8. Use the function ddply to reduce the combine dataframe.
-
-9. Write out the table in space separated formatted.
-
-
 

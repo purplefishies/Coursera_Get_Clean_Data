@@ -109,7 +109,29 @@ Is represented by a "level" and has one of the values of
 * STANDING
 * LAYING
 
+### Measurements
 
+* tBodyAcc-XYZ - time Domain Body Acceleration: split into X-,Y-,Z- axes in data set [L/T^2^]
+* tGravityAcc-XYZ - time Domain Gravity Acceleration: X-,Y-,Z- [L/T^2^]
+* tBodyAccJerk-XYZ - time Domain Body Acceleration Jerk: X-,Y-,Z- [L/T^2^]
+* tBodyGyro-XYZ - time Domain Gyro: X-,Y-,Z- [rad/T^2^]
+* tBodyGyroJerk-XYZ - time Domain Body Gyro: X-,Y-,Z- [rad/T^2^]
+* tBodyAccMag - time Domain Body Acceleration Magnitude: X-,Y-,Z- [L/T^2^]
+* tGravityAccMag - time Domain Gravity Acceleration Magnitude: X-,Y-,Z- [L/T^2^]
+* tBodyAccJerkMag - time Domain Body Acceleration Jerk Magnitude: X-,Y-,Z- [L/T^2^]
+* tBodyGyroMag - time Domain Body Gyro Magnitude: X-,Y-,Z- [rad/T^2^]
+* tBodyGyroJerkMag - time Domain Body Gyro Jerk Magnitude: X-,Y-,Z- [rad/T^2^]
+* fBodyAcc-XYZ - freq Domain Body Acceleration: X-,Y-,Z- [L/T^2^]
+* fBodyAccJerk-XYZ - freq Domain Body Acceleration Jerk: X-,Y-,Z- [L/T^2^]
+* fBodyGyro-XYZ - freq Domain Body Gyro: X-,Y-,Z- [rad/T^2^]
+* fBodyAccMag - freq Domain Body Acceleration Magnitude:: X-,Y-,Z- [L/T^2^]
+* fBodyAccJerkMag - freq Domain Body Acceleration Jerk Magnitude: X-,Y-,Z- [L/T^2^]
+* fBodyGyroMag - freq Domain Body Gyro Magnitude: X-,Y-,Z- [rad/T^2^]
+* fBodyGyroJerkMag - freq Domain Gyro Jerk Magnitude: X-,Y-,Z- [rad/T^2^]
+
+
+
+These variables include either "mean" or "std" in them. 
 
 
 Data Units are defined from this web site.

@@ -7,7 +7,8 @@ output: html_document
 
 
 ### Abstract
-The experiments involved 30 volunteers wearing a smartphone around their waist and being tracked on a number of activities. Each subject performed six activities: WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING. The volunteers were divided in two groups: the majority (70%) generated the training data, while the remaining 30% completed test data. The smartphone, being equipped with accelerometer and gyroscope, obtained various measurements. The measurements captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. Additionally, the subjects were assigned a numeric id, and the data was recorded manually from the video-captured experiments.
+This project involves the analysis of 30 subjects being monitored performing 6 different activities using smart phone sensors.
+The phones were able to perform measurements at 50Hz of 3-axial linear acceleration and 3-axial angular velocity measurements. The data was acquired during a training phase as well as a test collection phase.  The Activities were WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING. Data was collected using these devices and formatted into two data sets according to whether it was "test" or "training" data.
 
 
 ### Variables
